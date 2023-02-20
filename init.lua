@@ -6,8 +6,7 @@
 -- where a value with no key simply has an implicit numeric key
 local config = {
         -- Configure AstroNvim updates
-        updater = {
-                remote = "origin", -- remote to use
+        updater = {                remote = "origin", -- remote to use
                 channel = "stable", -- "stable" or "nightly"
                 version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
                 branch = "main", -- branch name (NIGHTLY ONLY)
@@ -250,15 +249,15 @@ local config = {
                         return config -- return final config table
                 end,
                 treesitter = { -- overrides `require("treesitter").setup(...)`
-                        ensure_installed = { "lua", "c_sharp" },
+                        ensure_installed = { "lua" },
                 },
                 -- use mason-lspconfig to configure LSP installations
                 ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-                        ensure_installed = { "omnisharp" },
+                        ensure_installed = { },
                 },
                 -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
                 ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
-                        ensure_installed = { "prettier", "csharpier" },
+                        ensure_installed = { "prettier" },
                 },
                 ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
                         setup_handlers = {
